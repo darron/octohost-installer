@@ -1,0 +1,13 @@
+<h2>We're building your octohost.</h2>
+
+<p>Please wait a few minutes.</p>
+
+<code>
+
+<% Open3.popen3(@cmd) do |stdin, stdout, stderr, wait_thr| %>
+  <% while line = stdout.gets %>
+    <%= line %>
+  <% end %>
+<% end %>
+
+</code>

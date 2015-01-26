@@ -50,7 +50,6 @@ module Installer
     #     disable :asset_stamp # no asset timestamping for dev
     #   end
     #
-
     ##
     # You can manage errors like:
     #
