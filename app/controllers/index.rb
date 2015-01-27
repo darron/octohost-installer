@@ -24,13 +24,12 @@ Installer::App.controllers :index do
   end
 
   post :index, :map => '/do/build' do
-    @cmd = "cd /octohost-cookbook && DIGITALOCEAN_API_TOKEN=\"#{params[:token]}\" packer build -only=digitalocean template.json"
+    @cmd = "cd #{ENV['COOKBOOK_DIR']} && DIGITALOCEAN_API_TOKEN=\"#{params[:token]}\" packer build -only=digitalocean template.json"
     render 'index/do-build'
   end
 
   # post :index, :map => "/do/build" do
   #   render 'index/do-build'
   # end
-
 
 end
