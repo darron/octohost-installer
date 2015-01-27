@@ -37,7 +37,7 @@ Bundler.require(:default, RACK_ENV)
 #
 Padrino.before_load do
   Padrino.dependency_paths << Padrino.root('app/workers/*.rb')
-  Padrino.set_load_paths('app/workers')
+  $LOAD_PATH.unshift Padrino.root('app/workers/')
 end
 
 ##
