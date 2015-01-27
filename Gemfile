@@ -26,6 +26,8 @@ gem 'padrino', '0.12.4'
 
 gem 'foreman'
 
+gem 'sidekiq'
+
 # Or Padrino Edge
 # gem 'padrino', :github => 'padrino/padrino-framework'
 

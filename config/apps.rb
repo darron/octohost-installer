@@ -34,3 +34,19 @@ end
 
 # Mounts the core application for this project
 Padrino.mount('Installer::App', :app_file => Padrino.root('app/app.rb')).to('/')
+
+require 'sidekiq/web'
+
+class Sidekiq::Web < ::Sinatra::Base
+  class << self
+    def dependencies; []; end
+    def setup_application!; end
+    def reload!; end
+  end
+end
+
+Padrino.mount(
+'Sidekiq',
+app_class: 'Sidekiq::Web',
+app_root: Sidekiq::Web.root
+).to('/sidekiq')
